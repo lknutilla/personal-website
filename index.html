@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body {
+    height: 100vh;
+    width: 100%;
+    display: flex;            /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    justify-content: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    font-family: 'Andale Mono', monospace, serif;
+  }
+  p {
+    font-size: 15px;
+    margin: 0;
+  }
+  .container {
+    display: flex;            /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    flex-flow: column nowrap;
+    -webkit-flex-flow: column nowrap;
+    -moz-flex-flow: column nowrap;
+    -ms-flex-flow: column nowrap;
+    justify-content: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+  }
+  a.shine:hover {
+    -webkit-mask-image: -webkit-linear-gradient(180deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);
+    -webkit-mask-size: 180%;
+    -webkit-animation: shine 1s infinite;
+            animation: shine 1s infinite;
+  }
+
+  @-webkit-keyframes shine {
+    from {
+      -webkit-mask-position: 150%;
+    }
+
+    to {
+      -webkit-mask-position: -50%;
+    }
+  }
+  .blue {
+    color: cornflowerblue;
+  }
+  .pink {
+    color: HotPink;
+  }
+  .green {
+    color: MediumAquaMarine;
+  }
+  .orange {
+    color: salmon;
+  }
+
+  @media only screen and (max-width: 425px) {
+    body {
+      justify-content: flex-start;
+      -webkit-justify-content: flex-start;
+      -moz-justify-content: flex-start;
+      -ms-justify-content: flex-start;
+    }
+    .container {
+      justify-content: flex-start;
+      -webkit-justify-content: flex-start;
+      -moz-justify-content: flex-start;
+      -ms-justify-content: flex-start;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>Hi, I'm Lo Knutilla</h1>
+    <div>
+      <h3>I make <a class="blue shine" href="https://www.instagram.com/hazelknut_spread/">art</a> in watercolor and&nbsp;ink,</h3>
+      <h3>talk about <a class="pink shine" href="https://lknutilla.github.io/hey-so-um/">queer stuff</a> and <a class="green shine" href="https://slides.com/loknutilla">tech&nbsp;stuff</a>,</h3>
+      <h3>and do front end <a class="orange shine" href="https://github.com/lknutilla">web dev&nbsp;things.</a></h3>
+      <p>Currently, I'm working as a web developer</p><p>at Capital One in San&nbsp;Francisco.</p></br>
+    </div>
+    <div>
+      <h1>Contact Me</h1>
+      <h3>
+        <a class="pink shine" href="mailto:lo.knutilla@gmail.com">email</a>
+        <a class="blue shine" href="https://www.instagram.com/hazelknut_spread/">instagram</a>
+        <a class="green shine" href="https://twitter.com/hazelknutspread">twitter</a>
+        <a class="orange shine" href="">resume</a>
+      </h3>
+    </div>
+  </div>
+</body>
+</html>
