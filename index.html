@@ -7,17 +7,24 @@
   <title>Lo Knutilla</title>
   <style>
     body {
-      height: 100vh;
       width: 100%;
       display: flex;            /* NEW, Spec - Opera 12.1, Firefox 20+ */
       display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
       display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
       display: -ms-flexbox;      /* TWEENER - IE 10 */
       display: -webkit-flex;     /* NEW - Chrome */
+      flex-flow: column nowrap;
+      -webkit-flex-flow: column nowrap;
+      -moz-flex-flow: column nowrap;
+      -ms-flex-flow: column nowrap;
       justify-content: center;
       -webkit-justify-content: center;
       -moz-justify-content: center;
       -ms-justify-content: center;
+      align-items: center;
+      -webkit-align-items: center;
+      -moz-align-items: center;
+      -ms-align-items: center;
       font-family: 'Andale Mono', monospace, serif;
     }
     p {
@@ -25,6 +32,7 @@
       margin: 0;
     }
     .container {
+      height: 100vh;
       display: flex;            /* NEW, Spec - Opera 12.1, Firefox 20+ */
       display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
       display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
@@ -39,6 +47,88 @@
       -moz-justify-content: center;
       -ms-justify-content: center;
     }
+
+    .portfolio {
+      flex-flow: column nowrap;
+      -webkit-flex-flow: column nowrap;
+      -moz-flex-flow: column nowrap;
+      -ms-flex-flow: column nowrap;
+    }
+
+    .slideshow {
+      display: flex;            /* NEW, Spec - Opera 12.1, Firefox 20+ */
+      display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+      display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+      display: -ms-flexbox;      /* TWEENER - IE 10 */
+      display: -webkit-flex;     /* NEW - Chrome */
+      flex-flow: row wrap;
+      -webkit-flex-flow: row wrap;
+      -moz-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+      justify-content: center;
+      -webkit-justify-content: center;
+      -moz-justify-content: center;
+      -ms-justify-content: center;
+    }
+
+    .image-block {
+      width: 500px;
+      height: 500px;
+      display: flex;            /* NEW, Spec - Opera 12.1, Firefox 20+ */
+      display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+      display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+      display: -ms-flexbox;      /* TWEENER - IE 10 */
+      display: -webkit-flex;     /* NEW - Chrome */
+      flex-flow: row wrap;
+      -webkit-flex-flow: row wrap;
+      -moz-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+    }
+
+    .image-block img {
+      height: 100px;
+      width: auto;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+
+    .selected-img {
+      width: 500px;
+      height: 500px;
+      display: flex;            /* NEW, Spec - Opera 12.1, Firefox 20+ */
+      display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+      display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+      display: -ms-flexbox;      /* TWEENER - IE 10 */
+      display: -webkit-flex;     /* NEW - Chrome */
+      flex-flow: row wrap;
+      -webkit-flex-flow: row wrap;
+      -moz-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+      align-items: center;
+      -webkit-align-items: center;
+      -moz-align-items: center;
+      -ms-align-items: center;
+    }
+
+    .selected-img img {
+      width: auto;
+      height: auto;
+      max-width: 500px;
+      max-height: 500px;
+      align-self: flex-end;
+      -webkit-align-self: flex-end;
+      -moz-align-self: flex-end;
+      -ms-align-self: flex-end;
+    }
+
+    .selected {
+      border: 3px cornflowerblue solid;
+    }
+
+    .portfolio-description {
+      min-width: 200px;
+    }
+
     a.shine:hover {
       -webkit-mask-image: -webkit-linear-gradient(180deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);
       -webkit-mask-size: 180%;
@@ -81,14 +171,20 @@
         -moz-justify-content: flex-start;
         -ms-justify-content: flex-start;
       }
+      .portfolio {
+        justify-content: flex-start;
+        -webkit-justify-content: flex-start;
+        -moz-justify-content: flex-start;
+        -ms-justify-content: flex-start;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="intro container">
     <h1>Hi, I'm Lo Knutilla</h1>
     <div>
-      <h3>I make <a class="blue shine" href="https://www.instagram.com/hazelknut_spread/">art</a> with ink both real and&nbsp;digital,</h3>
+      <h3>I make <a class="blue shine" href="#portfolio">art</a> with ink both real and&nbsp;digital,</h3>
       <h3>talk about <a class="pink shine" href="https://lknutilla.github.io/hey-so-um/">queer stuff</a> and <a class="green shine" href="https://slides.com/loknutilla">tech&nbsp;stuff</a>,</h3>
       <h3>and do front end <a class="orange shine" href="https://github.com/lknutilla">web dev&nbsp;things.</a></h3>
       <p>Currently, I'm working as a freelance&nbsp;artist</p><p>and as a web&nbsp;developer/designer </p><p>at Capital One in San&nbsp;Francisco.</p></br>
@@ -97,11 +193,40 @@
       <h1>Contact Me</h1>
       <h3>
         <a class="pink shine" href="mailto:lo.knutilla@gmail.com">email</a>
-        <a class="blue shine" href="https://www.instagram.com/hazelknut_spread/">instagram</a>
-        <a class="green shine" href="https://twitter.com/hazelknutspread">twitter</a>
+        <a class="blue shine" href="https://www.instagram.com/lonoodles/">instagram</a>
+        <a class="green shine" href="./images/resume.pdf">resume</a>
         <a class="orange shine" href="https://www.linkedin.com/in/lo-knutilla-a8325a88/">linkedin</a>
       </h3>
     </div>
+  </div>
+  <div class="portfolio container" id="portfolio">
+    <h1 style="color: cornflowerblue;">Portfolio</h1>
+    <div class="slideshow">
+      <div class="image-block">
+        <img id="0" class="selected" src="./images/unicorn.jpg" onclick="imgSelect(this,'Reflection Point', 'Spring 2016', '24in x 18in', 'Graphite')"/>
+        <img id="1" src="./images/tripleBS.jpg" onclick="imgSelect(this, 'Queer Pain Triptych', 'Spring 2016', '54in x 24in', 'Graphite')"/>
+        <img id="2" src="./images/speakBS.jpg" onclick="imgSelect(this, 'Silenced: Queer Pain Triptych', 'Spring 2016', '18in x 24in', 'Graphite')"/>
+        <img id="3" src="./images/seeBS.jpg" onclick="imgSelect(this, 'Unknown Danger: Queer Pain Triptych', 'Spring 2016', '18in x 24in', 'Graphite')"/>
+        <img id="4" src="./images/hearBS.jpg" onclick="imgSelect(this, 'Exhaustion: Queer Pain Triptych', 'Spring 2016', '18in x 24in', 'Graphite')"/>
+        <img id="5" src="./images/dress.jpg" onclick="imgSelect(this, 'Blood Under These Ruffles', 'Spring 2016', '????', 'Conte')"/>
+        <img id="6" src="./images/lips.jpg" onclick="imgSelect(this, 'Luscious Lips Lick a Little Lolipop', 'Spring 2017', '????', 'Ink, Watercolor')"/>
+        <img id="7" src="./images/beetle.jpg" onclick="imgSelect(this, 'Beetle Breakdown', 'Spring 2017', '????', 'Ink')"/>
+        <img id="8" src="./images/eyeball.jpg" onclick="imgSelect(this, 'Eyeball Breakdown', 'Spring 2017', '10in x 10in', 'Ink')"/>
+        <img id="9" src="./images/woman_reclining.jpg" onclick="imgSelect(this, 'Woman Reclining', 'Spring 2015', '24in x 18in', 'Charcoal')"/>
+        <img id="10" src="./images/caravaggio.jpg" onclick="imgSelect(this, 'Caravaggio Study', 'Spring 2015', '18in x 24in', 'Charcoal')"/>
+        <a class="blue shine" href="https://www.instagram.com/lonoodles/">instagram</a>
+      </div>
+      <div class="selected-img" id="selected-img">
+        <img src="./images/unicorn.jpg" />
+        <div class="portfolio-description">
+          <p><i>Reflection Point</i></p>
+          <p>Spring 2016</p>
+          <p>24in x 18in</p>
+          <p>Graphite</p>
+        </div>
+      </div>
+    </div>
+    <a class="pink shine" href="#">home</a>
   </div>
 </body>
 <script>
@@ -112,6 +237,13 @@
 
   ga('create', 'UA-98320362-1', 'auto');
   ga('send', 'pageview');
+
+  function imgSelect(img, title, date, size, medium) {
+    var selected = document.getElementsByClassName("selected");
+    selected[0].classList.remove("selected");
+    img.classList.add('selected');
+    document.getElementById("selected-img").innerHTML = '<img src='+ img.src +'><div class="portfolio-description"><p><i>'+ title +'</i></p><p>'+ date +'</p><p>'+ size +'</p><p>'+ medium +'</p></div>';
+  }
 
 </script>
 </html>
